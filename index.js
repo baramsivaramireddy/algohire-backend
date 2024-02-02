@@ -4,7 +4,7 @@
  *
  */
  var cors = require('cors')
- app.use(cors())
+
 require("dotenv").config();
 const fs = require('fs')
 const dbconnect = require("./dbconnect");
@@ -36,7 +36,7 @@ app.use((req, res, next) => {
 *https://github.com/swagger-api/swagger-ui/issues/8461 check these out
 */
 const CSS_URL = "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.3.0/swagger-ui.min.css";
-
+app.use(cors())
 app.use(`/api-docs`, swaggerUi.serve, swaggerUi.setup(swaggerDocument ,{
   customCss:
     '.swagger-ui .opblock .opblock-summary-path-description-wrapper { align-items: center; display: flex; flex-wrap: wrap; gap: 0 10px; padding: 0 10px; width: 100%; }',
