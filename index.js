@@ -3,7 +3,8 @@
  * it have swagger docs , mongodb connect
  *
  */
-
+ var cors = require('cors')
+ app.use(cors())
 require("dotenv").config();
 const fs = require('fs')
 const dbconnect = require("./dbconnect");
